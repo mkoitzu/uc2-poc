@@ -1,0 +1,32 @@
+<h2>GUI</h2>
+
+<div class="container">
+
+  <div class="card">
+    <form type="submit">
+    <table>
+      <tr>
+        <td><input type="number" value={{param1}} placeholder="param1" (input)="param1 = isNum($event.target.value)"/></td>
+        <td><input type="number" value={{param2}} placeholder="param2" (input)="param2 = isNum($event.target.value)"/></td>
+      </tr>
+      <tr>
+        <td><button (click)="summe()">Summe</button></td>
+        <td><h4>Summe: {{summeadd}}</h4></td>
+      </tr>
+    </table>
+    </form>
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+

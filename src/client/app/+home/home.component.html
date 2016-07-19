@@ -1,0 +1,17 @@
+
+<h2>Dynamsiche Liste</h2><br/>
+
+<form (submit)="addName()">
+  <md-input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist"></md-input>
+  <button md-raised-button type="submit">Add</button>
+</form>
+
+<md-card>gjfhgfjhgfkj</md-card>
+
+
+<ul>
+  <li *ngFor="let name of names">{{name}}</li>
+</ul>
+
+
+

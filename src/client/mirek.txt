@@ -1,0 +1,13 @@
+  
+  //import HostListener
+  
+  //@Input('ausg') height: string;
+  
+  /**
+  @HostListener('mouseenter') onMouseEnter() {
+    this.setHeight(this.height || this._defaultHeight );
+  }
+  @HostListener('mouseleave') onMouseLeave() {
+    this.setHeight(null);
+  }
+  **/

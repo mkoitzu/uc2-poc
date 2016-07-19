@@ -1,0 +1,71 @@
+<h2>Sliders</h2>
+
+<div class="container">
+
+
+  <div class="card">
+      <table>
+        <tr>
+          <td>Einnahmen:</td>
+          <td><h4>{{gehalt}} EUR</h4></td>
+        </tr>
+        <tr>
+          <td>Ausgaben:</td>
+          <td><h4>{{ausgaben}} EUR</h4></td>
+        </tr>
+        <tr>
+          <td>Es bleibt:</td>
+          <td><h4>{{bleibt}} EUR</h4></td>
+        </tr>
+      </table>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr>
+        <td>
+          <h2>Monatliche Einnahmen</h2>
+          <div class="range range-success">
+            <input type="range" name="range" min="0" max="{{max}}" [value]="gehalt" (input)="gehalt = $event.target.value;" (change)="onchange()"/>
+            <output id="rangePrimary">{{gehalt}}</output>
+          </div>
+
+          <br/><br/>
+
+          <h2>Monatliche Ausgaben:</h2>
+          <h4>Haus:</h4>
+          <div class="range range-danger">
+            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="haus" (input)="haus = $event.target.value;" (change)="onchange()"/>
+            <output id="rangeDanger1">{{haus}}</output>
+          </div>
+
+          <h4>Mobilität:</h4>
+          <div class="range range-danger">
+            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="auto" (input)="auto = $event.target.value;" (change)="onchange()"/>
+            <output id="rangeDanger2">{{auto}}</output>
+          </div>
+
+
+          <h4>Freizeit:</h4>
+          <div class="range range-danger">
+            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="freizeit" (input)="freizeit = $event.target.value;" (change)="onchange()"/>
+            <output id="rangeDanger3">{{freizeit}}</output>
+          </div>
+
+        </td>
+        <td>
+          <div class="balance"><p ausgabenbalance>&nbsp;</p></div>
+        </td>
+      </tr>
+     </table>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
