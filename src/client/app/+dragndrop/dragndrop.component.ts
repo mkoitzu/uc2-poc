@@ -4,6 +4,8 @@ import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 import { NameListService } from '../shared/index';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+
+import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula'
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -12,7 +14,8 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
   selector: 'sd-dragndrop',
   templateUrl: 'dragndrop.component.html',
   styleUrls: ['dragndrop.component.css'],
-  directives: [REACTIVE_FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_CARD_DIRECTIVES]
+  directives: [REACTIVE_FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_CARD_DIRECTIVES, Dragula],
+  viewProviders: [DragulaService]
 })
 export class DragNDropComponent implements OnInit {
 
