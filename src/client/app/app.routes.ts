@@ -15,9 +15,8 @@ const routes: RouterConfig = [
   ...MirekRoutes,
   ...GuiRoutes,
   ...SimonRoutes,
-  ...DragNDropRoutes
+  ...DragNDropRoutes,
   ...ModalRoutes
-  //...RxjsRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [
