@@ -1,0 +1,33 @@
+
+
+<div class="container" id="container">
+
+    <md-card>
+        <md-card-title-group>
+            <md-card-title>Modal Component</md-card-title>
+            <md-card-subtitle>Alert, Confirm</md-card-subtitle>
+        </md-card-title-group>
+        <md-card-actions align="end">
+            <button md-fab (click)="showConfirmDialogChangeBackground()" class="md-warn">V</button>
+            <button md-raised-button (click)="showConfirmDialog()" class="md-accent">Confirm Modal</button>
+            <button md-raised-button (click)="showAlertDialog()" class="md-primary">Alert Modal</button>
+            </md-card-actions>
+    </md-card>
+
+    <br/><br/>
+    <md-card id="changebg">
+        Result Confirm: {{result}}
+    </md-card>
+
+    <modal-confirm></modal-confirm>
+    <modal-alert></modal-alert>
+
+</div>
+
+
+
+
+
+
+
+

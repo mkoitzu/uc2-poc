@@ -306,7 +306,9 @@ export class SeedConfig {
       `/node_modules/**/package.json`,
       `/node_modules/@angular/*/package.json`,
       `/node_modules/@angular2-material/*/package.json`
+
     ],
+
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/common': `node_modules/@angular/common/bundles/common.umd.js`,
@@ -382,6 +384,9 @@ export class SeedConfig {
         defaultExtension: 'js'
       },
       'rxjs': {
+        defaultExtension: 'js'
+      },
+      'ngrx': {
         defaultExtension: 'js'
       }
     }

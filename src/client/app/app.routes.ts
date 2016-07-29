@@ -6,6 +6,8 @@ import { MirekRoutes } from './+mirek/index';
 import { GuiRoutes }   from './+gui/index';
 import { SimonRoutes } from './+simon/simon.routes';
 import { DragNDropRoutes } from './+dragndrop/dragndrop.routes';
+import { ModalRoutes }   from './+modal/index';
+//import { RxjsRoutes }   from './+rxjs/index';
 
 const routes: RouterConfig = [
   ...HomeRoutes,
@@ -14,6 +16,8 @@ const routes: RouterConfig = [
   ...GuiRoutes,
   ...SimonRoutes,
   ...DragNDropRoutes
+  ...ModalRoutes
+  //...RxjsRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [

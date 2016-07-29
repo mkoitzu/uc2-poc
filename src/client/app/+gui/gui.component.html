@@ -1,27 +1,85 @@
 <h2>GUI</h2>
 
-<div class="container">
+<md-sidenav-layout>
+  <md-sidenav #left [opened]="false" mode="side" layout-padding style="width: 250px;">
+    <h2>Left Sidenav.</h2>
+    <br>
+    <!--<button md-raised-button class="md-raised md-primary" #mybutton (click)="left.close()">Close</button>-->
+  </md-sidenav>
 
-  <div class="card">
-    <form type="submit">
-    <table>
-      <tr>
-        <td><input type="number" value={{param1}} placeholder="param1" (input)="param1 = isNum($event.target.value)"/></td>
-        <td><input type="number" value={{param2}} placeholder="param2" (input)="param2 = isNum($event.target.value)"/></td>
-      </tr>
-      <tr>
-        <td><button (click)="summe()">Summe</button></td>
-        <td><h4>Summe: {{summeadd}}</h4></td>
-      </tr>
-    </table>
+
+  <md-toolbar style="width: 100%;">
+    <button  md-button aria-label="Settings" (click)="left.toggle()">
+      <i md-icon>menu</i>
+    </button>
+    <span>Toolbar with Icon Buttons</span>
+    <span flex></span>
+    <button md-button aria-label="Favorite">
+      <i md-icon>favorite</i>
+    </button>
+    <button md-button aria-label="More">
+      <i md-icon>more_vert</i>
+    </button>
+  </md-toolbar>
+
+  <div class="container" style="margin-top:50px;height:100%;">
+
+    <md-tab-group>
+      <md-tab *ngFor="let tab of tabs">
+        <template md-tab-label>{{tab.title}}</template>
+        <template md-tab-content>
+          <md-content class="md-padding">{{tab.content}}</md-content>
+        </template>
+      </md-tab>
+    </md-tab-group>
+
+    <form (submit)="addTab(label.value,content.value)" layout="column" class="md-padding">
+      <h2>Add a new Tab:</h2>
+      <div layout="row" layout-sm="column">
+        <md-input #label placeholder="Label"></md-input>
+        <md-input #content placeholder="Content"></md-input>
+        <button md-raised-button class="md-primary"
+                [disabled]="!label.value || !content.value" type="submit">
+          Add Tab
+        </button>
+      </div>
     </form>
 
+    <br/><br/>
+
+    <div class="card" style="margin-top:50px;">
+      <form type="submit">
+        <table>
+          <tr>
+            <td><input type="number" value={{param1}} placeholder="param1" (input)="param1 = isNum($event.target.value)"/></td>
+            <td><input type="number" value={{param2}} placeholder="param2" (input)="param2 = isNum($event.target.value)"/></td>
+            <td><input type="date" value={{param3}} placeholder="param2" (input)="param3 = $event.target.value"/></td>
+
+          </tr>
+          <tr>
+              <td><a [routerLink]="['/mirek']">Show Sliders</a></td>
+            <td><button (click)="summe()">Summe</button></td>
+            <td><h4>Summe: {{summeadd}}</h4></td>
+          </tr>
+        </table>
+      </form>
 
 
+
+    </div>
+
+    <md-datepicker md-placeholder="Enter start date"></md-datepicker>
   </div>
 
 
-</div>
+
+</md-sidenav-layout>
+
+
+
+
+
+
 
 
 

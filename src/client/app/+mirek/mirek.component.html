@@ -1,64 +1,102 @@
-<h2>Sliders</h2>
 
 <div class="container">
+<!--
+  <md-card>
+    <md-card-title-group>
+      <img md-card-sm-image src="../../images/logo_uniqa.png">
+      <md-card-title>Card-Group mit Bild</md-card-title>
+      <md-card-subtitle>Subtitle</md-card-subtitle>
+    </md-card-title-group>
+  </md-card>
+-->
+  <md-card>
+      <!--<md-card-subtitle>Subtitel</md-card-subtitle>-->
+      <md-card-title-group>
+        <md-card-title>Sliders</md-card-title>
+        <img md-card-sm-image src="../../images/logo_uniqa.png">
+        <!--<md-card-subtitle>Subtitle</md-card-subtitle>-->
+      </md-card-title-group>
+      <md-card-content>
+        <md-grid-list cols="3" [style.background]="'white'" rowHeight="50px">
+          <md-grid-tile>Einnahmen:&nbsp;<b>{{gehalt}} EUR</b></md-grid-tile>
+          <md-grid-tile>Ausgaben:&nbsp;<b>{{ausgaben}} EUR</b></md-grid-tile>
+          <md-grid-tile [style.color]="(ausgaben>gehalt) ? 'red' : 'black'">Es bleibt:&nbsp;<b>{{bleibt}} EUR</b></md-grid-tile>
+        </md-grid-list>
+      </md-card-content>
 
+      <md-card-actions align="end">
+        <button md-raised-button class="md-raised md-warn" (click)="showAlertDialog()">Show Alert</button>
+      </md-card-actions>
+  </md-card>
 
-  <div class="card">
-      <table>
+  <br/><br/>
+
+  <md-card>
+    <md-card-content style="padding-bottom:50px;">
+        <md-grid-list cols="4" rowHeight="200px"><!--[style.background]="'lightblue'"-->
+          <md-grid-tile [colspan]="3" [rowspan]="2" >
+            <md-list class="app-list">
+              <md-list-item >
+                <h3>Monatliche Einnahmen:</h3>
+                <div class="range range-success">
+                  <input type="range" name="range" min="0" max="{{max}}" [value]="gehalt" (input)="gehalt = $event.target.value;onchange();"/><!--(change)="onchange()-->
+                  <output>{{gehalt}}</output>
+                </div>
+                <h3 style="margin-top:40px;margin-bottom:20px;">Monatliche Ausgaben:</h3>
+              </md-list-item>
+              <md-list-item *ngFor="let item of ausgabenitems">
+                <h4>{{item.name}}</h4>
+                <div class="range range-danger">
+                  <input type="range" name="range" min="0" max="{{item.max}}" [disabled]="gehalt<=0" [value]="item.value" (input)="item.value = $event.target.value;onchange();"/>
+                  <output>{{item.value}}</output>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-grid-tile>
+          <md-grid-tile [colspan]="1" [rowspan]="2">
+            <div class="balance"><p ausgabenbalance>&nbsp;</p></div>
+          </md-grid-tile>
+        </md-grid-list>
+    </md-card-content>
+  </md-card>
+<!--
+  <md-card>
+    <md-card-content>
+      <table width="700px;">
         <tr>
-          <td>Einnahmen:</td>
-          <td><h4>{{gehalt}} EUR</h4></td>
-        </tr>
-        <tr>
-          <td>Ausgaben:</td>
-          <td><h4>{{ausgaben}} EUR</h4></td>
-        </tr>
-        <tr>
-          <td>Es bleibt:</td>
-          <td><h4>{{bleibt}} EUR</h4></td>
+          <td width="80%">
+            <h2>Monatliche Einnahmen</h2>
+            <div class="range range-success">
+              <input type="range" name="range" min="0" max="{{max}}" [value]="gehalt" (input)="gehalt = $event.target.value;" (change)="onchange()"/>
+              <output id="rangePrimary0">{{gehalt}}</output>
+            </div>
+            <br/><br/><br/>
+            <h2>Monatliche Ausgaben:</h2>
+            <md-list class="app-list">
+              <md-list-item *ngFor="let item of ausgabenitems">
+                <h4>{{item.name}}</h4>
+                <div class="range range-danger">
+                  <input type="range" name="range" min="0" max="{{item.max}}" [disabled]="gehalt<=0" [value]="item.value" (input)="item.value = $event.target.value;" (change)="onchange()"/>
+                  <output id="rangeDanger0">{{item.value}}</output>
+                </div>
+              </md-list-item>
+            </md-list>
+          </td>
+          <td width="20%">
+            <div class="balance"><p ausgabenbalance>&nbsp;</p></div>
+          </td>
         </tr>
       </table>
-  </div>
-
-  <div class="card">
-    <table>
-      <tr>
-        <td>
-          <h2>Monatliche Einnahmen</h2>
-          <div class="range range-success">
-            <input type="range" name="range" min="0" max="{{max}}" [value]="gehalt" (input)="gehalt = $event.target.value;" (change)="onchange()"/>
-            <output id="rangePrimary">{{gehalt}}</output>
-          </div>
-
-          <br/><br/>
-
-          <h2>Monatliche Ausgaben:</h2>
-          <h4>Haus:</h4>
-          <div class="range range-danger">
-            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="haus" (input)="haus = $event.target.value;" (change)="onchange()"/>
-            <output id="rangeDanger1">{{haus}}</output>
-          </div>
-
-          <h4>Mobilität:</h4>
-          <div class="range range-danger">
-            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="auto" (input)="auto = $event.target.value;" (change)="onchange()"/>
-            <output id="rangeDanger2">{{auto}}</output>
-          </div>
+    </md-card-content>
+  </md-card>
+-->
+  <br/><br/>
 
 
-          <h4>Freizeit:</h4>
-          <div class="range range-danger">
-            <input type="range" name="range" min="0" max="{{max}}" [disabled]="gehalt<=0" [value]="freizeit" (input)="freizeit = $event.target.value;" (change)="onchange()"/>
-            <output id="rangeDanger3">{{freizeit}}</output>
-          </div>
 
-        </td>
-        <td>
-          <div class="balance"><p ausgabenbalance>&nbsp;</p></div>
-        </td>
-      </tr>
-     </table>
-  </div>
+  <br/>
+  <br/>
+  <modal-alert></modal-alert>
 
 </div>
 

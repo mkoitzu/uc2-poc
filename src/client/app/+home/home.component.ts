@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
-//import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+
 import { NameListService } from '../shared/index';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
+import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
+
+
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -12,7 +16,7 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
   selector: 'sd-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [REACTIVE_FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_CARD_DIRECTIVES]
+  directives: [REACTIVE_FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_CARD_DIRECTIVES,MD_CHECKBOX_DIRECTIVES,MD_BUTTON_DIRECTIVES]
 })
 export class HomeComponent implements OnInit {
 
@@ -33,6 +37,7 @@ export class HomeComponent implements OnInit {
    */
   ngOnInit() {
     this.getNames();
+    //componentHandler.upgradeDom();
   }
 
   /**
@@ -56,5 +61,8 @@ export class HomeComponent implements OnInit {
     this.newName = '';
     return false;
   }
+
+
+
 
 }
