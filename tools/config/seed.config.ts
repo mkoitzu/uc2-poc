@@ -305,8 +305,8 @@ export class SeedConfig {
       `/node_modules/*/package.json`,
       `/node_modules/**/package.json`,
       `/node_modules/@angular/*/package.json`,
-      `/node_modules/@angular2-material/*/package.json`
-
+      `/node_modules/@angular2-material/*/package.json`,
+      `/node_modules/rxjs/package.json`
     ],
 
     paths: {
@@ -384,9 +384,6 @@ export class SeedConfig {
         defaultExtension: 'js'
       },
       'rxjs': {
-        defaultExtension: 'js'
-      },
-      'ngrx': {
         defaultExtension: 'js'
       }
     }

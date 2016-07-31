@@ -41,6 +41,7 @@ export class ProjectConfig extends SeedConfig {
 
     // Production
     this.SYSTEM_BUILDER_CONFIG.paths['dragula'] = `node_modules/dragula/dist/dragula.min.js`;
+
   }
 
 }

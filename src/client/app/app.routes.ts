@@ -7,7 +7,7 @@ import { GuiRoutes }   from './+gui/index';
 import { SimonRoutes } from './+simon/simon.routes';
 import { DragNDropRoutes } from './+dragndrop/dragndrop.routes';
 import { ModalRoutes }   from './+modal/index';
-//import { RxjsRoutes }   from './+rxjs/index';
+import { FamilieRoutes }   from './+familie/index';
 
 const routes: RouterConfig = [
   ...HomeRoutes,
@@ -16,8 +16,10 @@ const routes: RouterConfig = [
   ...GuiRoutes,
   ...SimonRoutes,
   ...DragNDropRoutes,
-  ...ModalRoutes
+  ...ModalRoutes,
+  ...FamilieRoutes
 ];
+
 
 export const APP_ROUTER_PROVIDERS = [
   provideRouter(routes),
