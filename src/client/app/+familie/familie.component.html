@@ -1,0 +1,132 @@
+<!--
+<md-toolbar>
+Toolbar
+</md-toolbar>
+-->
+
+
+<div class="form" *ngIf="showAddForm">
+    <md-card>
+        <md-card-title-group>
+            <div [ngSwitch]="showFormType">
+                <template [ngSwitchCase]="1">
+                    <md-card-title>Erwachsener</md-card-title>
+                </template>
+                <template [ngSwitchCase]="2">
+                    <md-card-title>Kind</md-card-title>
+                </template>
+                <template [ngSwitchCase]="3">
+                    <md-card-title>Tier</md-card-title>
+                </template>
+            </div>
+            <button md-mini-fab color="warn" (click)="showAddForm=false">x</button>
+        </md-card-title-group>
+        <md-card-content>
+            <form style="margin-top: 20px;">
+                <div [ngSwitch]="showFormType">
+                    <template [ngSwitchCase]="1">
+                        <img md-card-sm-image src="../../images/adult_female.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'cornflowerblue' : 'white'}"/> <!--[style.background]="'cornflowerblue'"-->
+                        <img md-card-sm-image src="../../images/adult_male.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'white' : 'cornflowerblue'}">
+                    </template>
+                    <template [ngSwitchCase]="2">
+                        <img md-card-sm-image src="../../images/kid_female.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'cornflowerblue' : 'white'}"/>
+                        <img md-card-sm-image src="../../images/kid_male.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'white' : 'cornflowerblue'}">
+                    </template>
+                    <template [ngSwitchCase]="3">
+                        <img md-card-sm-image src="../../images/cat.png" (click)="tempPet=1" [ngStyle]="{'background-color': tempPet==1 ? 'cornflowerblue' : 'white'}"/>
+                        <img md-card-sm-image src="../../images/dog.png" (click)="tempPet=2" [ngStyle]="{'background-color': tempPet==2 ? 'cornflowerblue' : 'white'}">
+                        <img md-card-sm-image src="../../images/fish.png" (click)="tempPet=3" [ngStyle]="{'background-color': tempPet==3 ? 'cornflowerblue' : 'white'}">
+                    </template>
+                </div>
+                <md-input [(ngModel)]="tempName" placeholder="Name" [ngModelOptions]="{standalone: true}" style="margin-top: 15px;"></md-input>
+                <md-input [(ngModel)]="tempAge" placeholder="Alter" [ngModelOptions]="{standalone: true}"></md-input>
+            </form>
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-raised-button (click)="addFamilienPart()" color="warn">Add</button>
+        </md-card-actions>
+    </md-card>
+</div>
+
+
+
+
+<md-grid-list cols="4" rowHeight="198px"><!--[style.background]="'lightblue'"-->
+    <md-grid-tile [colspan]="1" [rowspan]="3" >
+        <div class="card-container-buttons">
+            <md-card>
+                <md-card-title>Erwachsene</md-card-title>
+                <img md-card-sm-image src="../../images/adults.png">
+                <md-card-content>
+                </md-card-content>
+                <md-card-actions align="end">
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(1)" [disabled]="adults.length > 2">+</button>
+                </md-card-actions>
+            </md-card>
+            <md-card>
+                <md-card-title>Kinder</md-card-title>
+                <img md-card-sm-image src="../../images/kids.png">
+                <md-card-content>
+                </md-card-content>
+                <md-card-actions align="end">
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(2)"  [disabled]="kids.length > 2">+</button>
+                </md-card-actions>
+            </md-card>
+            <md-card>
+                <md-card-title>Tiere</md-card-title>
+                <img md-card-sm-image src="../../images/pets.png">
+                <md-card-content>
+                </md-card-content>
+                <md-card-actions align="end">
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(3)" [disabled]="pets.length > 2">+</button><!--color="accent"-->
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile [colspan]="3" [rowspan]="1">
+        <div class="card-container">
+            <md-card *ngFor="let adult of adults, let i = index">
+                <img *ngIf="adult.type" md-card-sm-image src="../../images/adult_female.png">
+                <img *ngIf="!adult.type" md-card-sm-image src="../../images/adult_male.png">
+                <md-card-title>{{adult.name}}</md-card-title>
+                <md-card-actions align="end">
+                    <button md-raised-button (click)="delAdult(i)">Löschen</button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="3" [rowspan]="1">
+        <div class="card-container">
+            <md-card *ngFor="let kid of kids, let i = index">
+                <img *ngIf="kid.type" md-card-sm-image src="../../images/kid_female.png">
+                <img *ngIf="!kid.type" md-card-sm-image src="../../images/kid_male.png">
+                <md-card-title>{{kid.name}}</md-card-title>
+                <md-card-actions align="end">
+                    <button md-raised-button (click)="delKid(i)">Löschen</button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="3" [rowspan]="1">
+        <div class="card-container">
+            <md-card *ngFor="let pet of pets, let i = index">
+                <div [ngSwitch]="pet.type">
+                    <template [ngSwitchCase]="1"><img md-card-sm-image src="../../images/cat.png"></template>
+                    <template [ngSwitchCase]="2"><img md-card-sm-image src="../../images/dog.png"></template>
+                    <template [ngSwitchCase]="3"><img md-card-sm-image src="../../images/fish.png"></template>
+                </div>
+                <md-card-title style="margin-top: 10px;">{{pet.name}}</md-card-title>
+                <md-card-actions align="end">
+                    <button md-raised-button (click)="delPet(i)">Löschen</button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-grid-tile>
+
+</md-grid-list>
+
+<modal-alert></modal-alert>
+
+
+
