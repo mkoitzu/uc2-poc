@@ -41,19 +41,11 @@ export class FamilieComponent {
 
   constructor(public _alertService:AlertService) {}
 
-
-   setFamily(family:any) {
-     this.adults = family.adults;
-     this.kids = family.kids;
-     this.pets = family.pets;
-   }
-
-
-
   showFormFamilie(value:any) {
     this.showFormType = value;
     this.showAddForm = true;
   }
+
 
   addFamilienPart() {
     if ( this.tempName != '' && this.tempAge != '' ) {
