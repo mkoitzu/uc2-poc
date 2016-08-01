@@ -85,16 +85,7 @@ button:hover {
   background-color: #28739e;
 }
 
-input[type="number"],input[type="date"]  {
-  border: none;
-  border-bottom: 1px solid lightslategrey;
-}
 
-input[type="number"]:focus,input[type="date"]:focus {
-  border:none;
-  border-bottom: 1px solid red;
-  outline: none;
-}
 
 
 .range {

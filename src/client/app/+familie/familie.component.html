@@ -27,19 +27,24 @@ Toolbar
                     <template [ngSwitchCase]="1">
                         <img md-card-sm-image src="../../images/adult_female.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'cornflowerblue' : 'white'}"/> <!--[style.background]="'cornflowerblue'"-->
                         <img md-card-sm-image src="../../images/adult_male.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'white' : 'cornflowerblue'}">
+                        <md-input [(ngModel)]="tempName" placeholder="Name" [ngModelOptions]="{standalone: true}" style="margin-top: 15px;"></md-input>
+                        <md-input type="number" min="18" max="100" [(ngModel)]="tempAge" placeholder="Alter" [ngModelOptions]="{standalone: true}"></md-input>
                     </template>
                     <template [ngSwitchCase]="2">
                         <img md-card-sm-image src="../../images/kid_female.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'cornflowerblue' : 'white'}"/>
                         <img md-card-sm-image src="../../images/kid_male.png" (click)="tempFemale=!tempFemale" [ngStyle]="{'background-color': tempFemale ? 'white' : 'cornflowerblue'}">
+                        <md-input [(ngModel)]="tempName" placeholder="Name" [ngModelOptions]="{standalone: true}" style="margin-top: 15px;"></md-input>
+                        <md-input type="number" min="1" max="18" [(ngModel)]="tempAge" placeholder="Alter" [ngModelOptions]="{standalone: true}"></md-input>
                     </template>
                     <template [ngSwitchCase]="3">
                         <img md-card-sm-image src="../../images/cat.png" (click)="tempPet=PET_CAT" [ngStyle]="{'background-color': tempPet==PET_CAT ? 'cornflowerblue' : 'white'}"/>
                         <img md-card-sm-image src="../../images/dog.png" (click)="tempPet=PET_DOG" [ngStyle]="{'background-color': tempPet==PET_DOG ? 'cornflowerblue' : 'white'}">
                         <img md-card-sm-image src="../../images/fish.png" (click)="tempPet=PET_FISH" [ngStyle]="{'background-color': tempPet==PET_FISH ? 'cornflowerblue' : 'white'}">
+                        <md-input [(ngModel)]="tempName" placeholder="Name" [ngModelOptions]="{standalone: true}" style="margin-top: 15px;"></md-input>
+                        <md-input type="number" min="1" max="20" [(ngModel)]="tempAge" placeholder="Alter" [ngModelOptions]="{standalone: true}"></md-input>
                     </template>
                 </div>
-                <md-input [(ngModel)]="tempName" placeholder="Name" [ngModelOptions]="{standalone: true}" style="margin-top: 15px;"></md-input>
-                <md-input [(ngModel)]="tempAge" placeholder="Alter" [ngModelOptions]="{standalone: true}"></md-input>
+
             </form>
         </md-card-content>
         <md-card-actions align="end">
@@ -60,7 +65,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_ADULT)" [disabled]="adults.length > 2"><i class="material-icons">add</i></button>
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_ADULT)" [disabled]="adults.length > MAX"><i class="material-icons">add</i></button>
                 </md-card-actions>
             </md-card>
             <md-card>
@@ -69,7 +74,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_KID)"  [disabled]="kids.length > 2"><i class="material-icons">add</i></button>
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_KID)"  [disabled]="kids.length > MAX"><i class="material-icons">add</i></button>
                 </md-card-actions>
             </md-card>
             <md-card>
@@ -78,7 +83,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_PET)" [disabled]="pets.length > 2"><i class="material-icons">add</i></button><!--color="accent"-->
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_PET)" [disabled]="pets.length > MAX"><i class="material-icons">add</i></button><!--color="accent"-->
                 </md-card-actions>
             </md-card>
         </div>

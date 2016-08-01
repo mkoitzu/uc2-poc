@@ -34,6 +34,8 @@ export class FamilieComponent {
   PET_DOG:number = 2;
   PET_FISH:number = 3;
 
+  MAX:number = 2;
+
   showAddForm: boolean = false;
   showFormType:number = this.FORM_TYPE_ADULT;
   tempName: string = '';
@@ -48,6 +50,9 @@ export class FamilieComponent {
   constructor(public _alertService:AlertService) {}
 
   showFormFamilie(value:any) {
+    this.tempName = '';
+    this.tempAge = '';
+    this.tempFemale = true;
     this.showFormType = value;
     this.showAddForm = true;
   }
