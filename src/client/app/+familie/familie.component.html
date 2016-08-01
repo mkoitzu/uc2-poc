@@ -19,7 +19,7 @@ Toolbar
                     <md-card-title>Tier</md-card-title>
                 </template>
             </div>
-            <button md-mini-fab color="warn" (click)="showAddForm=false"><i class="material-icons">clear</i></button>
+            <button md-mini-fab color="warn" (click)="showAddForm=false"><i class="material-icons">close</i></button>
         </md-card-title-group>
         <md-card-content>
             <form style="margin-top: 20px;">
@@ -43,7 +43,7 @@ Toolbar
             </form>
         </md-card-content>
         <md-card-actions align="end">
-            <button md-raised-button (click)="addFamilienPart()" color="warn"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">save</i><span>Add</span></button>
+            <button md-raised-button (click)="addFamilienPart()" color="warn"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">save</i><span>Speichern</span></button>
         </md-card-actions>
     </md-card>
 </div>
@@ -91,7 +91,7 @@ Toolbar
                 <img *ngIf="!adult.type" md-card-sm-image src="../../images/adult_male.png">
                 <md-card-title>{{adult.name}}</md-card-title>
                 <md-card-actions align="end">
-                    <button md-raised-button (click)="delAdult(i)">Löschen</button>
+                    <button md-raised-button (click)="delAdult(i)"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">delete</i><span>Löschen</span></button>
                 </md-card-actions>
             </md-card>
         </div>
@@ -103,7 +103,7 @@ Toolbar
                 <img *ngIf="!kid.type" md-card-sm-image src="../../images/kid_male.png">
                 <md-card-title>{{kid.name}}</md-card-title>
                 <md-card-actions align="end">
-                    <button md-raised-button (click)="delKid(i)">Löschen</button>
+                    <button md-raised-button (click)="delKid(i)"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">delete</i><span>Löschen</span></button>
                 </md-card-actions>
             </md-card>
         </div>
@@ -118,7 +118,7 @@ Toolbar
                 </div>
                 <md-card-title style="margin-top: 10px;">{{pet.name}}</md-card-title>
                 <md-card-actions align="end">
-                    <button md-raised-button (click)="delPet(i)">Löschen</button>
+                    <button md-raised-button (click)="delPet(i)"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">delete</i><span>Löschen</span></button>
                 </md-card-actions>
             </md-card>
         </div>
