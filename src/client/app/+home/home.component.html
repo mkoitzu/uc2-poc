@@ -1,24 +1,26 @@
 
-<h2>Dynamsiche Liste</h2><br/>
+<div class="container">
+  <h2>Dynamsiche Liste</h2><br/>
 
 
 
-<md-card>
-  <form (submit)="addName()">
-    <md-input class="md-warn" [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist"></md-input>
-    <button md-raised-button type="submit" class="md-raised md-warn">Add</button>
-  </form>
-</md-card>
-
-
-
-<md-card>
-<ul>
-  <li *ngFor="let name of names">{{name}}</li>
-</ul>
+  <md-card>
+    <form (submit)="addName()">
+      <md-input class="md-warn" [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist"></md-input>
+      <button md-raised-button type="submit" class="md-raised md-warn">Add</button>
+    </form>
   </md-card>
 
-<br/>
+
+
+  <md-card>
+  <ul>
+    <li *ngFor="let name of names">{{name}}</li>
+  </ul>
+    </md-card>
+
+  <br/>
+</div>
 
 
 
