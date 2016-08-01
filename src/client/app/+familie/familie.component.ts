@@ -8,9 +8,7 @@ import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 import {AlertService} from '../shared/modal/alert.service';
 import {AlertComponent} from '../shared/modal/alert.component';
 
-export const FORM_TYPE_ADULT = 1;
-export const FORM_TYPE_KID = 2;
-export const FORM_TYPE_PET = 3;
+
 
 /**
  * This class represents the lazy loaded AboutComponent.
@@ -28,8 +26,16 @@ export const FORM_TYPE_PET = 3;
 
 export class FamilieComponent {
 
+  FORM_TYPE_ADULT:number = 1;
+  FORM_TYPE_KID:number = 2;
+  FORM_TYPE_PET:number = 3;
+
+  PET_CAT:number = 1;
+  PET_DOG:number = 2;
+  PET_FISH:number = 3;
+
   showAddForm: boolean = false;
-  showFormType:number = FORM_TYPE_ADULT;
+  showFormType:number = this.FORM_TYPE_ADULT;
   tempName: string = '';
   tempAge: string = '';
   tempFemale: boolean = true;
@@ -49,11 +55,11 @@ export class FamilieComponent {
 
   addFamilienPart() {
     if ( this.tempName != '' && this.tempAge != '' ) {
-      if (this.showFormType === FORM_TYPE_ADULT) {
+      if (this.showFormType === this.FORM_TYPE_ADULT) {
         this.adults.push({name: this.tempName, type: this.tempFemale, age: this.tempAge});
-      } else if (this.showFormType === FORM_TYPE_KID) {
+      } else if (this.showFormType === this.FORM_TYPE_KID) {
         this.kids.push({name: this.tempName, type: this.tempFemale, age: this.tempAge});
-      } else if (this.showFormType === FORM_TYPE_PET) {
+      } else if (this.showFormType === this.FORM_TYPE_PET) {
         this.pets.push({name: this.tempName, type: this.tempPet, age: this.tempAge});
       }
       this.tempName = '';
