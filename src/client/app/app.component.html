@@ -14,7 +14,10 @@
         <button  md-mini-fab color="warn" (click)="left.open()">
             <md-icon><</md-icon>
         </button>
-        <span md-line style="margin-left:16px;">BERATUNGSUNTERLAGE</span>
+        <div style="width: 100%;vertical-align: middle;">
+            <span md-line style="margin-left:16px;">BERATUNGSUNTERLAGE</span>
+            <more></more>
+        </div>
     </md-toolbar>
     <router-outlet></router-outlet>
 </md-sidenav-layout>
