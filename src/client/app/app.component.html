@@ -1,3 +1,29 @@
+<md-sidenav-layout fullscreen>
+    <md-sidenav #left style="width:300px;">
+        <img md-card-sm-image src="../../images/logo_uniqa.png">
+        <md-nav-list>
+            <div *ngFor="let m of menus">
+                <a md-list-item [routerLink]="[m.link]" (click)="left.close()">
+                    <md-icon md-list-icon class="material-icons">{{m.icon}}</md-icon>
+                    <span md-line style="padding-top:8px;">{{m.name}}</span>
+                </a>
+            </div>
+        </md-nav-list>
+    </md-sidenav>
+    <md-toolbar color="primary" style="width: 100%;">
+        <button  md-mini-fab color="warn" (click)="left.open()">
+            <md-icon class="material-icons">menu</md-icon>
+        </button>
+        <div style="width: 100%;vertical-align: middle;">
+            <span md-line style="margin-left:16px;">BERATUNGSUNTERLAGE</span>
+            <more></more>
+        </div>
+    </md-toolbar>
+    <router-outlet></router-outlet>
+</md-sidenav-layout>
+
+<!--
 <sd-toolbar></sd-toolbar>
 <sd-navbar></sd-navbar>
 <router-outlet></router-outlet>
+-->

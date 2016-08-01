@@ -20,16 +20,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+more {
+  background: url("../assets/svg/more.svg");
+  float: right;
+  height: 24px;
+  margin-top: 0px;
+  width: 24px;
+}
 
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  height:100%;
 }
-
-
-
 
 p {
   font-weight: 400;
@@ -80,16 +85,7 @@ button:hover {
   background-color: #28739e;
 }
 
-input[type="number"],input[type="date"]  {
-  border: none;
-  border-bottom: 1px solid lightslategrey;
-}
 
-input[type="number"]:focus,input[type="date"]:focus {
-  border:none;
-  border-bottom: 1px solid red;
-  outline: none;
-}
 
 
 .range {

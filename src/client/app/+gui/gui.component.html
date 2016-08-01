@@ -1,29 +1,10 @@
-<h2>GUI</h2>
-
-<md-sidenav-layout>
-  <md-sidenav #left [opened]="false" mode="side" layout-padding style="width: 250px;">
-    <h2>Left Sidenav.</h2>
-    <br>
-    <!--<button md-raised-button class="md-raised md-primary" #mybutton (click)="left.close()">Close</button>-->
-  </md-sidenav>
 
 
-  <md-toolbar style="width: 100%;">
-    <button  md-button aria-label="Settings" (click)="left.toggle()">
-      <i md-icon>menu</i>
-    </button>
-    <span>Toolbar with Icon Buttons</span>
-    <span flex></span>
-    <button md-button aria-label="Favorite">
-      <i md-icon>favorite</i>
-    </button>
-    <button md-button aria-label="More">
-      <i md-icon>more_vert</i>
-    </button>
-  </md-toolbar>
 
-  <div class="container" style="margin-top:50px;height:100%;">
 
+<div class="container">
+
+    <h2>GUI</h2>
     <md-tab-group>
       <md-tab *ngFor="let tab of tabs">
         <template md-tab-label>{{tab.title}}</template>
@@ -70,39 +51,6 @@
 
     <md-datepicker md-placeholder="Enter start date"></md-datepicker>
   </div>
-
-
-
-</md-sidenav-layout>
-
-
-  <style>
-    #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
-  </style>
-  <script>
-    function allowDrop(ev) {
-      ev.preventDefault();
-    }
-
-    function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
-    }
-
-    function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-    }
-  </script>
-
-
-<p>Drag the W3Schools image into the rectangle:</p>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
-<img id="drag1" src="../../images/adult_female.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
-
-
 
 
 
