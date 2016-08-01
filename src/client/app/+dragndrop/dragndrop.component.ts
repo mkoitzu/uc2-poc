@@ -29,7 +29,22 @@ export class DragNDropComponent implements OnInit {
    *
    * @param {NameListService} nameListService - The injected NameListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(public nameListService: NameListService, private dragulaService: DragulaService) {
+    dragulaService.setOptions('first-bag', {
+      copy: true
+    });
+
+    dragulaService.drag.subscribe((value: any) => {
+      console.log(`drag: ${value[0]}`);
+      this.onDrag(value.slice(1));
+    });
+  }
+
+  onDrag(args: any) {
+    let [e, el] = args;
+    // do something
+    console.log(args);
+  }
 
   /**
    * Get the names OnInit
