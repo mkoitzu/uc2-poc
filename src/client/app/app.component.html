@@ -4,15 +4,15 @@
         <md-nav-list>
             <div *ngFor="let m of menus">
                 <a md-list-item [routerLink]="[m.link]" (click)="left.close()">
-                    <!--<md-icon md-list-icon>{{menu.icon}}</md-icon>-->
-                    <span md-line>{{m.name}}</span>
+                    <md-icon md-list-icon class="material-icons">{{m.icon}}</md-icon>
+                    <span md-line style="padding-top:8px;">{{m.name}}</span>
                 </a>
             </div>
         </md-nav-list>
     </md-sidenav>
     <md-toolbar color="primary" style="width: 100%;">
         <button  md-mini-fab color="warn" (click)="left.open()">
-            <md-icon><</md-icon>
+            <md-icon class="material-icons">menu</md-icon>
         </button>
         <div style="width: 100%;vertical-align: middle;">
             <span md-line style="margin-left:16px;">BERATUNGSUNTERLAGE</span>

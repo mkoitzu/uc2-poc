@@ -25,16 +25,20 @@ export class AppComponent {
     console.log('Environment config', Config);
   }
 
+  /*************************************
+   * Icons: https://design.google.com/icons/
+   **************************************/
+
   menus: Object[] = [
-    { name: 'HOME', link: '/' },
-    { name: 'ABOUT', link: '/about' },
-    { name: 'SLIDERS', link: '/mirek' },
-    { name: 'FAMILY', link: '/familie' },
-    { name: 'MODAL', link: '/modal' },
-    { name: 'GUI', link: '/gui' },
-    { name: 'SIMON', link: '/simon' },
-    { name: 'DRAGNDROP', link: '/dragndrop' },
-    { name: 'RXJS', link: '/rxjs' }
+    { name: 'HOME', link: '/', icon:'home'},
+    { name: 'ABOUT', link: '/about', icon:'info' },
+    { name: 'SLIDERS', link: '/mirek', icon:'tune' },
+    { name: 'FAMILY', link: '/familie', icon:'group' },
+    { name: 'MODAL', link: '/modal', icon:'stop' },
+    { name: 'GUI', link: '/gui', icon:'web' },
+    { name: 'SIMON', link: '/simon', icon:'list' },
+    { name: 'DRAGNDROP', link: '/dragndrop', icon:'tab unselected' },
+    { name: 'RXJS', link: '/rxjs', icon:'' }
 
   ];
 }

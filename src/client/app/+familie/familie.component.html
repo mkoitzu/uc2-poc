@@ -19,7 +19,7 @@ Toolbar
                     <md-card-title>Tier</md-card-title>
                 </template>
             </div>
-            <button md-mini-fab color="warn" (click)="showAddForm=false">x</button>
+            <button md-mini-fab color="warn" (click)="showAddForm=false"><i class="material-icons">clear</i></button>
         </md-card-title-group>
         <md-card-content>
             <form style="margin-top: 20px;">
@@ -43,7 +43,7 @@ Toolbar
             </form>
         </md-card-content>
         <md-card-actions align="end">
-            <button md-raised-button (click)="addFamilienPart()" color="warn">Add</button>
+            <button md-raised-button (click)="addFamilienPart()" color="warn"><i class="material-icons" style="vertical-align: middle;margin-right:5px;">save</i><span>Add</span></button>
         </md-card-actions>
     </md-card>
 </div>
@@ -60,7 +60,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_ADULT)" [disabled]="adults.length > 2">+</button>
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_ADULT)" [disabled]="adults.length > 2"><i class="material-icons">add</i></button>
                 </md-card-actions>
             </md-card>
             <md-card>
@@ -69,7 +69,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_KID)"  [disabled]="kids.length > 2">+</button>
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_KID)"  [disabled]="kids.length > 2"><i class="material-icons">add</i></button>
                 </md-card-actions>
             </md-card>
             <md-card>
@@ -78,7 +78,7 @@ Toolbar
                 <md-card-content>
                 </md-card-content>
                 <md-card-actions align="end">
-                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_PET)" [disabled]="pets.length > 2">+</button><!--color="accent"-->
+                    <button md-mini-fab color="warn" (click)="showFormFamilie(FORM_TYPE_PET)" [disabled]="pets.length > 2"><i class="material-icons">add</i></button><!--color="accent"-->
                 </md-card-actions>
             </md-card>
         </div>
