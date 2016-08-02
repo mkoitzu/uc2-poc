@@ -5,8 +5,8 @@ const KEY_ESC = 27;
 
 @Component({
     selector: 'modal-confirm',
-    templateUrl: 'app/shared/confirm/confirm.component.html',
-    styleUrls: ['app/shared/confirm/modal.component.css']
+    templateUrl: 'app/shared/modal/confirm.component.html',
+    styleUrls: ['app/shared/modal/modal.component.css']
 })
 
 export class ConfirmComponent implements OnInit {
