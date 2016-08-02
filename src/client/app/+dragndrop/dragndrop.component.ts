@@ -31,19 +31,18 @@ export class DragNDropComponent implements OnInit {
    */
   constructor(public nameListService: NameListService, private dragulaService: DragulaService) {
     dragulaService.setOptions('first-bag', {
-      copy: true
+      copy: true,
+      removeOnSpill: true
     });
-
     dragulaService.drag.subscribe((value: any) => {
       console.log(`drag: ${value[0]}`);
       this.onDrag(value.slice(1));
     });
   }
 
-  onDrag(args: any) {
+  private onDrag(args: any) {
     let [e, el] = args;
     // do something
-    console.log(args);
   }
 
   /**
