@@ -5,8 +5,8 @@ const KEY_ESC = 27;
 
 @Component({
     selector: 'modal-alert',
-    templateUrl: 'app/shared/confirm/alert.component.html',
-    styleUrls: ['app/shared/confirm/modal.component.css']
+    templateUrl: 'app/shared/modal/alert.component.html',
+    styleUrls: ['app/shared/modal/modal.component.css']
 })
 
 
