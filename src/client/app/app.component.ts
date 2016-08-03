@@ -5,6 +5,7 @@ import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MdToolbar} from '@angular2-material/toolbar';
+import {LocalStorageService} from "angular2-localstorage/LocalStorageEmitter";
 
 import { Config, NameListService, NavbarComponent, ToolbarComponent } from './shared/index';
 
