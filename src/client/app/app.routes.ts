@@ -8,6 +8,7 @@ import { SimonRoutes } from './+simon/simon.routes';
 import { DragNDropRoutes } from './+dragndrop/dragndrop.routes';
 import { ModalRoutes }   from './+modal/index';
 import { FamilieRoutes }   from './+familie/index';
+import { TodoRoutes } from './+todo/index';
 
 const routes: RouterConfig = [
   ...HomeRoutes,
@@ -17,7 +18,8 @@ const routes: RouterConfig = [
   ...SimonRoutes,
   ...DragNDropRoutes,
   ...ModalRoutes,
-  ...FamilieRoutes
+  ...FamilieRoutes,
+  ...TodoRoutes
 ];
 
 

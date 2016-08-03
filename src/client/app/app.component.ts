@@ -38,7 +38,7 @@ export class AppComponent {
     { name: 'GUI', link: '/gui', icon:'web' },
     { name: 'SIMON', link: '/simon', icon:'list' },
     { name: 'DRAGNDROP', link: '/dragndrop', icon:'tab unselected' },
-    { name: 'RXJS', link: '/rxjs', icon:'' }
-
+    { name: 'RXJS', link: '/rxjs', icon:'' },
+    { name: 'TODO', link: '/todo', icon: 'list'}
   ];
 }
